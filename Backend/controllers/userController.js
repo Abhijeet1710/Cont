@@ -8,6 +8,8 @@ exports.getAllUsers = async (req, res) => {
 exports.registerUser = async (req, res) => {
 
     try {
+        console.log("RU");
+
         const totalUsers = await userModel.find({});
         const userId = totalUsers.length + 1;
 
@@ -23,7 +25,7 @@ exports.registerUser = async (req, res) => {
         }
 
     } catch (err) {
-        res.status(400).json({ status: "failure", message: err });
+        res.status(401).json({ status: "failure", message: err });
     }
 }
 
@@ -40,7 +42,55 @@ exports.loginUser = async (req, res) => {
             .json({ status: "failure", message: "Wrong email or password", data: {} });
         }
     }catch(err) {
-        res.status(400).json({ status: "failure", message: err });
+        res.status(401).json({ status: "failure", message: err });
     }
+}
+
+exports.updateData = async (req, res) => {
+    try {
+        const dataToUpdate = req.body;
+
+        const filter = { userId : dataToUpdate.userId };
+        const options = { upsert: false };
+
+        const updateUser = {
+            $set: {
+                ...dataToUpdate
+            }
+        }
+
+        const result = await userModel.updateOne(filter, updateUser, options)
+        
+        if(result.modifiedCount == 0) {
+            res
+            .status(400)
+            .json({ status: "failure", message: "User with given userId not found", data: {} });
+            
+        }else {
+            res
+            .status(200)
+            .json({ status: "success", message: "Login Successful", data: result });
+            
+        }
+        
+        
+    }catch(err) {
+        res
+        .status(401)
+        .json({ status: "failure", message: "Some Error", data: err });
+        
+    }
+}
+
+
+// ___________COMMON(CALLED FROM projectController)______________________
+
+exports.addProjectInMyProjects = async (userId, projectId) => {
+    const filter = {userId: userId};
+    const updation = {$addToSet: {myProjects: projectId}};
+
+    const updated = await userModel.updateOne({filter, updation})
+
+    return updated;
 }
 

@@ -10,6 +10,8 @@ routing.post('/user/register', userController.registerUser);
 
 routing.post('/user/login', userController.loginUser);
 
+routing.post('/user/update', userController.updateData);
+
 
 
 

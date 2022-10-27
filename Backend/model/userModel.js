@@ -38,6 +38,11 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: [true, 'Required Field']
         },
+        userName: {
+            type: String,
+            unique: true,
+            required: [true, 'Required Field']
+        },
         email: {
             type: String,
             unique: true,
@@ -49,35 +54,33 @@ const userSchema = new mongoose.Schema(
         },
         phoneNumber: {
             type: String,
-            required: [true, 'Required Field']
         },
         address: {
             type: String,
         },
         myProjects: {
-            type: [Number]
+            type: [Number],
+            default: []
         },
         participatedProjects: {
-            type: [Number]
+            type: [Number],
+            default: []
         },
         profilePicture: {
             type: String
         },
         connections: {
-            type: [Number]
+            type: [Number],
+            default: []
         },
         connectionRequests: {
-            type: [Number]
+            type: [Number],
+            default: []
         },
 
         chat: {
-            type: [ParticularUserChat]
-        },
-
-        userName: {
-            type: String,
-            unique: true,
-            required: [true, 'Required Field']
+            type: [ParticularUserChat],
+            default: []
         },
         tagLine: {
             type: String

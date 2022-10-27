@@ -2,40 +2,24 @@ POST http://localhost:3000/user/register
 Content-Type: application/json
 
 {
-    "name": "Pallavi",
-    "email": "pallavii@g.com",
+    "name": "name-abhi",
+    "userName": "Abhijeet30",
+    "email": "abhii@g.com",
     "password": "Pallavi@1710",
     "phoneNumber": "7558348607",
     "address": "At Sakori",
-    "myProjects": [1, 2],
-    "participatedProjects": [],
-    "profilePicture": "pic",
-    "connections": [1],
-    "connectionRequests": [1],
-    "chat": [
-        {
-            "from": 2,
-            "to": 1,
+    "profilePicture": "pic"
+}
 
-            "allMessages": [
-                {
-                    "message": "Msg from 1 to 2",
-                    "dispatchTime": "1:03 25-10-2022"
-                }
-            ]
-        },
-        {
-            "from": 3,
-            "to": 1,
+###
 
-            "allMessages": [
-                {
-                    "message": "Msg from 1 to 2",
-                    "dispatchTime": "1:03 25-10-2022"
-                }
-            ]
-        }
-    ]
+POST http://localhost:3000/user/update
+Content-Type: application/json
+
+{
+    "userId": 17,
+    "tagLine": "Chasing Excellence",
+    "company": "Infosys Ltd."
 }
 
 ###
