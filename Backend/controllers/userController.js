@@ -5,6 +5,23 @@ exports.getAllUsers = async (req, res) => {
     res.status(200).json({ status: "success", message: { data: allUsers } });
 }
 
+exports.getUser = async (req, res) => {
+    try {
+
+        const result = await userModel.find({userId: req.params.userId});
+
+        res
+        .status(200)
+        .json({ status: "success", message: "MSG", data: result });
+        
+    }catch(err) {
+        res
+        .status(4001)
+        .json({ status: "failure", message: err, data: {} });
+        
+    }
+}
+
 exports.registerUser = async (req, res) => {
 
     try {
@@ -82,15 +99,89 @@ exports.updateData = async (req, res) => {
     }
 }
 
-
-// ___________COMMON(CALLED FROM projectController)______________________
-
-exports.addProjectInMyProjects = async (userId, projectId) => {
+exports.acceptConnectionRequest = async (userId, friendId) => {
+    console.log("In addToMyProjects");
     const filter = {userId: userId};
-    const updation = {$addToSet: {myProjects: projectId}};
+    const updation = {$addToSet: {connections: friendId}};
 
-    const updated = await userModel.updateOne({filter, updation})
+    const updated = await userModel.updateOne(filter, updation);
 
     return updated;
 }
 
+exports.addConnectionRequest = async (userId, futureFriendId) => {
+    console.log("In addToMyProjects");
+    const filter = {userId: userId};
+    const updation = {$addToSet: {connectionRequests: futureFriendId}};
+
+    const updated = await userModel.updateOne(filter, updation);
+
+    return updated;
+}
+
+exports.addLiked = async (userId, friendWhoLiked) => {
+    console.log("In addToMyProjects");
+    const filter = {userId: userId};
+    const updation = {$addToSet: {liked: friendWhoLiked}};
+
+    const updated = await userModel.updateOne(filter, updation);
+
+    return updated;
+}
+
+
+// ___________COMMON(CALLED FROM projectController)______________________
+
+exports.addProjectInMyProjects = async (uid, projectId) => {
+    console.log("In addToMyProjects");
+    const filter = {userId: uid};
+    const updation = {$addToSet: {myProjects: projectId}};
+
+    const updated = await userModel.updateOne(filter, updation);
+
+    return updated;
+}
+
+exports.addProjectInParticipatedProjects = async (uid, projectId) => {
+    console.log("In addToMyProjects");
+    const filter = {userId: uid};
+    const updation = {$addToSet: {participatedProjects: projectId}};
+
+    const updated = await userModel.updateOne(filter, updation);
+
+    return updated;
+}
+
+exports.test = async (req, res) => {
+    try {
+        console.log("In test");
+        const result = await this.addLiked(req.params.u, req.params.p);
+        res
+        .status(200)
+        .json({ status: "success", message: "Successful", data: result });
+         
+    }catch(err) {
+        res
+        .status(401)
+        .json({ status: "failure", message: "Some Error", data: err });
+        
+    }
+}
+
+
+
+// exports.getUser = async (req, res) => {
+//     try {
+
+
+//         res
+//         .status(200)
+//         .json({ status: "success", message: "MSG", data: result });
+        
+//     }catch(err) {
+//         res
+//         .status(4001)
+//         .json({ status: "failure", message: err, data: {} });
+        
+//     }
+// }
