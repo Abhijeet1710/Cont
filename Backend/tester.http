@@ -42,13 +42,40 @@ GET http://localhost:3000/user/test/6/2
 
 ###
 
-GET http://localhost:3000/user/6
+GET http://localhost:3000/user/1
 
 ###
 
 GET http://localhost:3000/projects
 
+###
 
+GET http://localhost:3000/project/6
+
+###
+
+POST http://localhost:3000/project/addNewProject
+Content-Type: application/json
+
+{
+    "projectName": "Cont 5",
+    "projectDescription": "Cont Desc",
+    "projectAdmin": 1,
+    "teamMatesRequire": 2,
+    "techStackRequire": ["Java", "Spring"]
+}
+
+###
+
+POST http://localhost:3000/project/addRequest
+Content-Type: application/json
+
+{
+    "projectId": 6,
+    "userId": 2
+}
+
+###
 
 
 

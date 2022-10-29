@@ -17,7 +17,7 @@ const projectSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Required Field']
     },
-    reuests: {
+    requests: {
         type: [Number],
         default: []
     },

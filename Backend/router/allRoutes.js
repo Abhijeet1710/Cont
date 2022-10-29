@@ -23,6 +23,12 @@ routing.post('/user/update', userController.updateData);
 
 routing.get('/projects', projectController.getAllProjects);
 
+routing.get('/project/:projectId', projectController.getProject);
+
+routing.post('/project/addNewProject', projectController.addProject);
+
+routing.post('/project/addRequest', projectController.addRequest);
+
 
 // _______________________________________________________________________
 
