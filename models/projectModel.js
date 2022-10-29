@@ -11,7 +11,7 @@ class Project {
     projectDomain; // # [ text, ... ]
 
     projectPic; // string
-    likes;     //Number
+    liked;     // [Number (userId)]
 
     // projectchat;    // Group of contributors can chat here.
 }

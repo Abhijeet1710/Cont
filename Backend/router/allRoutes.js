@@ -1,5 +1,6 @@
 const express = require('express');
 const userController = require('../controllers/userController');
+const projectController = require('../controllers/projectController');
 const routing = express.Router();
 
 
@@ -15,6 +16,12 @@ routing.post('/user/login', userController.loginUser);
 routing.post('/user/update', userController.updateData);
 
 
+
+
+// _______________________________________________________________________
+
+
+routing.get('/projects', projectController.getAllProjects);
 
 
 // _______________________________________________________________________

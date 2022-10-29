@@ -44,6 +44,10 @@ GET http://localhost:3000/user/test/6/2
 
 GET http://localhost:3000/user/6
 
+###
+
+GET http://localhost:3000/projects
+
 
 
 
