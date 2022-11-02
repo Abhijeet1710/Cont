@@ -16,8 +16,6 @@ routing.post('/user/login', userController.loginUser);
 routing.post('/user/update', userController.updateData);
 
 
-
-
 // _______________________________________________________________________
 
 
@@ -27,7 +25,11 @@ routing.get('/project/:projectId', projectController.getProject);
 
 routing.post('/project/addNewProject', projectController.addProject);
 
+routing.post('/project/updateProject', projectController.updateProject);    //*
+
 routing.post('/project/addRequest', projectController.addRequest);
+
+routing.post('/project/acceptRequest', projectController.acceptRequest);    //*
 
 
 // _______________________________________________________________________
