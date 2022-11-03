@@ -1,7 +1,7 @@
  p, h1, h2, h3, h4, h5, h6, input, button, div {
     color: white;
+    margin: 0px;
 }
-
 
 .bodyy {
     height: 100%;
@@ -21,7 +21,7 @@
 }
 
 .view {
-    margin: 0px 10px;
+    margin: 20px;
 }
 
 .btn {
