@@ -30,6 +30,7 @@
 @media only screen and (min-width: 1000px) {
     .view {
         width: 90%;
+        height: 100%;
         margin: auto;
     }
 
@@ -41,4 +42,5 @@
     .menuItem:hover {
         background-color: #1F6FEB;
     }
+
 } 

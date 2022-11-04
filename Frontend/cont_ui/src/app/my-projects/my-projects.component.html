@@ -1,3 +1,18 @@
 <div class="myProjectContent">
-    works
+    <div>
+        <div></div>
+
+        <div class="cards" *ngFor="let project of my">
+            <div class="card">
+                <div style="border-top: 1px solid rgb(36, 36, 36);"></div>
+
+                <h3 class="projName"> {{project.name}} </h3>
+                <span> {{project.description}} </span>
+                <div style="margin-top: 10px;">
+                    <span style="margin: 10px 6px 10px 0px;" *ngFor="let t of project.tech" class="chip"> {{t}} </span>
+                </div>
+                <p class="ago" style="font-weight: lighter;">Updated 2 Minutes ago</p>
+            </div>
+        </div>
+    </div>
 </div>
