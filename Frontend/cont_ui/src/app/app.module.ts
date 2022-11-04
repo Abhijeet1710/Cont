@@ -13,6 +13,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateNewComponent } from './create-new/create-new.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { OverviewComponent } from './overview/overview.component';
+import { MyProjectsComponent } from './my-projects/my-projects.component';
+import { ParticipatedProjectsComponent } from './participated-projects/participated-projects.component';
+import { AllProjectsComponent } from './all-projects/all-projects.component';
+import { ChatComponent } from './chat/chat.component';
+import { PopularProjectComponent } from './popular-project/popular-project.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DashboardComponent,
     CreateNewComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    OverviewComponent,
+    MyProjectsComponent,
+    ParticipatedProjectsComponent,
+    AllProjectsComponent,
+    ChatComponent,
+    PopularProjectComponent
   ],
   imports: [
     BrowserModule,

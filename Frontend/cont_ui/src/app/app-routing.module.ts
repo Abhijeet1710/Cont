@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: 'user/:userName', component: DashboardComponent},
+  {path: '', component: DashboardComponent},
   {path: 'new', component: CreateNewComponent},
   {path: 'SignIn', component: LoginComponent},
   {path: 'PageNotFound', component: PageNotFoundComponent},

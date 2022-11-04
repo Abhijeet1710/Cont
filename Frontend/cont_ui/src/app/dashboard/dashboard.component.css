@@ -1,5 +1,6 @@
 .left {
-    width: 100%;
+    width: 98%;
+    margin: auto;
 }
 
 .right {
@@ -24,7 +25,7 @@ p, span {
 
 .editProfileBtn {
     width: 100%;
-    border: 1px solid rgb(77, 77, 77);
+    border: 1px solid rgb(36, 36, 36);
     outline: none;
     background-color: #161B22;
     color: white;
@@ -41,6 +42,12 @@ p, span {
     border: 1px solid red;
 }
 
+.hc {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
 
 @media only screen and (min-width: 1000px) {
     .dashboardBody {
@@ -50,6 +57,7 @@ p, span {
     .left {
         margin-top: 45px;
         width: 27%;
+
     }
     
     .right {

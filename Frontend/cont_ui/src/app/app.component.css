@@ -4,7 +4,6 @@
 }
 
 .bodyy {
-    height: 100%;
      background-color: #0D1117;
 }
 
@@ -20,10 +19,6 @@
     justify-content: space-between;
 }
 
-.view {
-    margin: 20px;
-}
-
 .btn {
     background-color: transparent;
     outline: none;
@@ -34,7 +29,7 @@
 
 @media only screen and (min-width: 1000px) {
     .view {
-        width: 80%;
+        width: 90%;
         margin: auto;
     }
 
