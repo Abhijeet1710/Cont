@@ -9,8 +9,8 @@
 
 .profilePic {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     margin-bottom: 20px;
     border: 1px solid rgb(164, 164, 247);
 }
@@ -48,6 +48,24 @@ p, span {
     margin-top: 4px;
 }
 
+.imageDiv {
+    display: flex;
+    justify-content: start;
+    margin: 10px;
+}
+
+.name-username-lg {
+    display: none;
+}
+
+.name-username-sm {
+    display: block;
+    margin-left: 20px;
+}
+
+.info-div {
+    margin: 20px 0px 20px 20px;
+}
 
 @media only screen and (min-width: 1000px) {
     .dashboardBody {
@@ -71,6 +89,15 @@ p, span {
         display: flex;
         justify-content: center;
     }
+    .name-username-lg {
+        display: block;
+    }
 
+    .name-username-sm {
+        display: none;
+    }
+    .info-div {
+        margin: 20px 0px 20px 0px;
+    }
 }
     

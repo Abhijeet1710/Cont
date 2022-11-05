@@ -9,6 +9,8 @@ export class MyProjectsComponent implements OnInit {
 
   constructor() { }
 
+  variable = "";
+
   my = [
     {
       name: "Github API",
@@ -61,7 +63,40 @@ export class MyProjectsComponent implements OnInit {
 
   ]
 
+  filtered : any = this.my;
+
   ngOnInit(): void {
+  }
+
+  filterData(newVal: any) {
+
+    if(newVal.trim() == "") { 
+
+      this.filtered = this.my;
+      return;
+    }
+
+    newVal = newVal.toLowerCase();
+    this.filtered = this.my.filter((proj) => {
+
+      let n = proj.name.toLowerCase();
+      let d = proj.description.toLowerCase();
+      let t = proj.tech;
+
+      if(n.includes(newVal) || d.includes(newVal)) return true;
+
+      for(let tech of t) {
+        if(tech.toLowerCase().includes(newVal)) return true;
+      }
+
+      return false;
+    })
+
+  }
+
+  clearFilter() {
+    this.variable = "";
+    this.filtered = this.my;
   }
 
 }

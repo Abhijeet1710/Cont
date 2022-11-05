@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
-
+import { FormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 
@@ -43,7 +43,8 @@ import { PopularProjectComponent } from './popular-project/popular-project.compo
     MatButtonModule,
     MatMenuModule,
     MatTabsModule,
-    MatChipsModule
+    MatChipsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

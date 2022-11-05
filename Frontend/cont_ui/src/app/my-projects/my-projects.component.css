@@ -24,9 +24,54 @@
     padding: 0px 4px;
 }
 
+.hc {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.box {
+    width: 96%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.searchBox {
+    width: 96%;
+    border-radius: 4px;
+    color: white;
+    border: 1px solid rgb(36, 36, 36);
+    padding: 10px 10px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+.clr:hover {
+    color: #4d98ef;
+}
+
+.clr {
+    margin-top: 10px;
+}
+
+.filterMsg {
+    display: flex;
+    flex-direction: column;
+}
+
 @media only screen and (min-width: 1000px) { 
 
     .myProjectContent {
         width: 100%;
+    }
+
+    .filterMsg {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
     }
 }
