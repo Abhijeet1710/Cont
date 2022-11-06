@@ -38,15 +38,16 @@
     flex-direction: column;
 }
 
+
 .searchBox {
     width: 96%;
     border-radius: 4px;
     color: white;
-    border: 1px solid rgb(36, 36, 36);
+    border: 1px solid rgb(68, 68, 68);
     padding: 10px 10px;
-
-    margin-top: 20px;
-    margin-bottom: 20px;
+    
+    margin-top: 30px;
+    margin-bottom: 30px;
     background-color: transparent;
 }
 
@@ -63,6 +64,62 @@
     flex-direction: column;
 }
 
+.addBtn {
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 4px;
+    height: 27px;
+
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    background-color: rgb(0, 110, 0);
+}
+
+.searchSec {
+    display: flex;
+    align-items: center;
+    
+}
+.lg {
+    display: none;
+}
+
+.addBtn {
+    margin-left: 20px;
+}
+
+.nothingBox {
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 6px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+    margin: 70px 0px;
+    padding: 40px 0px;
+}
+.addBtn2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    border-radius: 8px;
+    padding: 6px  ;
+    background-color: green;
+
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.addBtn2:hover {
+    background-color: rgb(0, 110, 0);
+}
+
 @media only screen and (min-width: 1000px) { 
 
     .myProjectContent {
@@ -72,6 +129,11 @@
     .filterMsg {
         display: flex;
         flex-direction: row;
-        justify-content: space-between
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .lg {
+        display: block;
     }
 }

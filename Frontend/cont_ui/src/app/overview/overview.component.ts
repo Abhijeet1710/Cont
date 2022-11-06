@@ -12,7 +12,7 @@ export class OverviewComponent implements OnInit {
   my = [
     {
       name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation 📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
       tech: "Kotlin",
       likes: 20
     },

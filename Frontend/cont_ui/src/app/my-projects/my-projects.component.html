@@ -1,16 +1,25 @@
 <div class="myProjectContent">
-    <div>
+    <div *ngIf="my.length > 0">
         <div class="box">
-            <input [(ngModel)]="variable" (ngModelChange)="filterData($event)" class="searchBox" type="text"
-                placeholder="Find a Project ...">
+            <div class="searchSec">
+                <input [(ngModel)]="variable" (ngModelChange)="filterData($event)" class="searchBox" type="text"
+                    placeholder="Find a Project ...">
+                <div class="addBtn">
+                    <img width="16px" height="16px"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAjklEQVRIie2WWwrCQBAEezyHeB6D9/Dgmdyj/BFkXyRrNqI49T10MQy9rBQEGcANWHjhwPQJsVMy9+bYG2KqQWZdWade8ShC/IfiSk8TWkGt+VbPiwoALum8e6UUN7PLmri51R7ynn/PjSUtB3h8i/g+WO7PzIR4q0McYqletaKnwwGm7N81A9fDxcHP8QBI05mbXx2tsAAAAABJRU5ErkJggg==">
+                    <span style="margin-left: 4px;" class="lg">New</span>
+                </div>
+            </div>
 
-            <div *ngIf="variable.length > 0" style="margin-bottom: 20px;">
-                <div style="border-top: 1px solid rgb(36, 36, 36); margin-bottom: 20px;"></div>
+            <div *ngIf="variable.length > 0" style="margin-bottom: 30px;">
+                <div style="border-top: 1px solid rgb(68, 68, 68); margin-bottom: 20px;"></div>
                 <div class="filterMsg">
                     <span style="font-weight: lighter;"> <b> {{filtered.length}} </b> results for project matching <b>
                             {{variable}} </b> sorted by last updated </span>
-                    <span style="display: flex; align-items: center; cursor: pointer;" class="clr" (click) = "clearFilter()" >
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAuElEQVRIie2UTQ7CIBCF33iOxrULPETryngPL8zGPU00eIjnwomphCKUsjF9KzIT3jc/BGBTiUheSI5cLkfyPPWUAOAAdJV1OhHZzwFYaf42Ffn47tYwTOkX4AagB/CI5J4ATgBsNi2ytEHjhqSfxD1Jo7khvFQC8CSPmjuQvM/EFgPCak1w9rELpYCvTlKVxwDNX1FOB01H1HzJzZ+pVYPYKLzmbArwf3/RuIKnSwGulRCnHpvy9QIPl0jvxoZVvQAAAABJRU5ErkJggg==">
+                    <span style="display: flex; align-items: center; cursor: pointer; margin-bottom: 4px;" class="clr"
+                        (click)="clearFilter()">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAuElEQVRIie2UTQ7CIBCF33iOxrULPETryngPL8zGPU00eIjnwomphCKUsjF9KzIT3jc/BGBTiUheSI5cLkfyPPWUAOAAdJV1OhHZzwFYaf42Ffn47tYwTOkX4AagB/CI5J4ATgBsNi2ytEHjhqSfxD1Jo7khvFQC8CSPmjuQvM/EFgPCak1w9rELpYCvTlKVxwDNX1FOB01H1HzJzZ+pVYPYKLzmbArwf3/RuIKnSwGulRCnHpvy9QIPl0jvxoZVvQAAAABJRU5ErkJggg==">
                         <span style="margin-left: 4px;">Clear Filtered</span>
                     </span>
                 </div>
@@ -19,11 +28,11 @@
 
         <div class="cards" *ngFor="let project of filtered">
             <div class="card">
-                <div style="border-top: 1px solid rgb(36, 36, 36);"></div>
+                <div style="border-top: 1px solid rgb(68, 68, 68);"></div>
 
                 <h3 class="projName"> {{project.name}} </h3>
                 <span style="font-weight: lighter;"> {{project.description}} </span>
-                <div style="margin-top: 10px;">
+                <div class="lg" style="margin-top: 10px;">
                     <span style="margin: 10px 6px 10px 0px;" *ngFor="let t of project.tech" class="chip"> {{t}} </span>
                 </div>
                 <div style="display: flex; justify-content: space-between;">
@@ -37,5 +46,18 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="" *ngIf="my.length == 0" class="nothingBox">
+        <img width="30px" height="30px"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAhUlEQVRIie2T0Q2AIAxEr85hHMTgAMY9XLzscf5IQhANhn4Y5H2R9nJHSQGageRG0rMeJbkGX4kCFMBodF8VkSmdIDDfTOjeaHLNfKNSMzyJLegBPSAPSXdTX9Ja/JMJACIiqSjVlBB8vvlEPw94syElXLbIitwWeUN/DYc4YDcK0dOrEQ6MFa0f+Wf+DgAAAABJRU5ErkJggg==">
+        <h3>Create your first Cont project</h3>
+        <span style="font-weight: lighter;">Projects are a customizable, flexible tool for planning and tracking your
+            team.</span>
+        <span class="addBtn2">
+            <img width="16px" height="16px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAjklEQVRIie2WWwrCQBAEezyHeB6D9/Dgmdyj/BFkXyRrNqI49T10MQy9rBQEGcANWHjhwPQJsVMy9+bYG2KqQWZdWade8ShC/IfiSk8TWkGt+VbPiwoALum8e6UUN7PLmri51R7ynn/PjSUtB3h8i/g+WO7PzIR4q0McYqletaKnwwGm7N81A9fDxcHP8QBI05mbXx2tsAAAAABJRU5ErkJggg==">
+            <span style="margin-left: 4px;">New</span>
+        </span>
     </div>
 </div>

@@ -10,11 +10,11 @@ export class MyProjectsComponent implements OnInit {
   constructor() { }
 
   variable = "";
-
+// my = []
   my = [
     {
       name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation 📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
       tech: ["Kotlin", "Java", "Android", "Kotlin", "Java", "Android", "Kotlin", "Java", "Android"],
       likes: 20
     },
@@ -38,7 +38,7 @@ export class MyProjectsComponent implements OnInit {
     },
     {
       name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation 📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
       tech: ["Kotlin"],
       likes: 20
     },
@@ -77,7 +77,7 @@ export class MyProjectsComponent implements OnInit {
     }
 
     newVal = newVal.toLowerCase();
-    this.filtered = this.my.filter((proj) => {
+    this.filtered = this.my.filter((proj : any) => {
 
       let n = proj.name.toLowerCase();
       let d = proj.description.toLowerCase();
