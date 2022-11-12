@@ -10,14 +10,14 @@
                 <p class="userName">Abhijeet1710</p>
             </div>
         </div>
-        <div class="content">
+        <div *ngIf = "!editing" class="content" >
             <div class="name-username-lg">
                 <h1 class="name"> Abhijeet Khamkar </h1>
                 <p class="userName">Abhijeet1710</p>
             </div>
             <div style="display: flex; flex-direction:column; justify-content: center">
                 <p>DSE @ Infosys. Working on MEAN stack.</p>
-                <button class="editProfileBtn"> Edit Profile </button>
+                <button class="editProfileBtn" (click)="openEditProfile()"> Edit Profile </button>
             </div>
             <div class="info-div">
                 <div class="hc">
@@ -42,6 +42,34 @@
                     <span style="margin-left: 6px;">abhikhamkar30</span>
                 </div>
             </div>
+        </div>
+
+        <div *ngIf = "editing" class="editDetails">
+            <form>
+                <label class="lbl" for="name"> Name </label> <br>
+                <input type="text" class="name" id="name"/>
+
+                <label class="lbl" for="email"> Email Id </label> <br>
+                <input type="text" class="email" id="email"/>
+
+                <label class="lbl" for="phone"> Phone Number </label> <br>
+                <input type="text" class="phone" id="phone"/>
+
+                <label class="lbl" for="Address"> Address </label> <br>
+                <input type="text" class="Address" id="Address"/>
+
+                <label class="lbl" for="TagLine"> TagLine </label> <br>
+                <input type="text" class="TagLine" id="TagLine"/>
+
+                <label class="lbl" for="name"> Twitter </label> <br>
+                <input type="text" class="name" id="Twitter"/>
+
+                <label class="lbl" for="company"> Company </label> <br>
+                <input type="text" class="company" id="company"/>
+
+                <button>Save</button>
+                <button style="margin-left: 10px;" (click) = "closeEditProfile()">Cancal</button>
+            </form>
         </div>
     </div>
 

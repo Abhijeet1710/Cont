@@ -67,6 +67,42 @@ p, span {
     margin: 20px 0px 20px 20px;
 }
 
+.showDetails {
+    display: none;
+}
+
+form > input {
+    width: 92%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    padding: 4px 10px;
+
+    border-radius: 4px;
+
+    border: 1px solid rgb(68, 68, 68);
+    color: white;
+
+    margin-bottom: 6px;
+}
+
+form > button {
+    cursor: pointer;
+    color: white;
+    padding: 8px 24px;
+    background-color: green;
+    outline: none;
+    border: none;
+
+    border-radius: 4px;
+    margin-top: 14px;
+}
+
+form > button:hover {
+    background-color: rgb(1, 117, 1);
+}
+
 @media only screen and (min-width: 1000px) {
     .dashboardBody {
         display: flex;

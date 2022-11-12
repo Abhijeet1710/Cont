@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  editing:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  closeEditProfile() {
+    this.editing = false;
+  }
+
+  openEditProfile() {
+    this.editing = true;
   }
 
 }
