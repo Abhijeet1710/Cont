@@ -6,7 +6,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { FormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
-
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +21,7 @@ import { ParticipatedProjectsComponent } from './participated-projects/participa
 import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { ChatComponent } from './chat/chat.component';
 import { PopularProjectComponent } from './popular-project/popular-project.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,10 @@ import { PopularProjectComponent } from './popular-project/popular-project.compo
     MatMenuModule,
     MatTabsModule,
     MatChipsModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
