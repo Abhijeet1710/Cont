@@ -4,7 +4,7 @@
             <div class="searchSec">
                 <input [(ngModel)]="variable" (ngModelChange)="filterData($event)" class="searchBox" type="text"
                     placeholder="Find a Project ...">
-                <div class="addBtn">
+                <div class="addBtn" (click) = "openNewPageToCreateNewProject()">
                     <img width="16px" height="16px"
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAjklEQVRIie2WWwrCQBAEezyHeB6D9/Dgmdyj/BFkXyRrNqI49T10MQy9rBQEGcANWHjhwPQJsVMy9+bYG2KqQWZdWade8ShC/IfiSk8TWkGt+VbPiwoALum8e6UUN7PLmri51R7ynn/PjSUtB3h8i/g+WO7PzIR4q0McYqletaKnwwGm7N81A9fDxcHP8QBI05mbXx2tsAAAAABJRU5ErkJggg==">
                     <span style="margin-left: 4px;" class="lg">New</span>

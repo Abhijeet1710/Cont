@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +12,13 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class LoginComponent implements OnInit {
 
   signUpOpened: boolean = true;
-  loginForm : FormGroup;
+  loginForm:any = {};
+  signupForm:any = {};
+  email:String;
 
-  constructor(private route: Router, private _snackBar: MatSnackBar) { }
+  constructor(private route: Router, private _snackBar: MatSnackBar, private loginService : LoginService) { }
 
   ngOnInit(): void {
-
-
 
   }
 
@@ -29,14 +30,25 @@ export class LoginComponent implements OnInit {
     this.signUpOpened = true;
   }
 
-  signIn() {    
-    if(true) {
-      this.route.navigate(['/dashboard']);
-    }
+  signIn() {  
+    console.log(this.loginForm.email);
+    this.loginService.loginUser(this.loginForm)
+    .subscribe((d : any) => {
+      this._snackBar.open(this.loginForm.email+" Sign In is Successfull ", '', {duration: 2000});
+      localStorage.setItem('user', JSON.stringify(d.data));
+
+      console.log(JSON.parse(localStorage.getItem('user')).name);
+      
+    }, (err) => {
+      console.log(err);
+    })
   }
 
   signUp() {
-    this._snackBar.open("Sign Up Successfull", '', {duration: 2000});
+    console.log(this.email);
+    
+    
+    // this._snackBar.open(this.email+" Sign Up is Successfull ", '', {duration: 2000});
   }
 
 }

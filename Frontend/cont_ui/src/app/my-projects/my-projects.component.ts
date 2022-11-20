@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-projects',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProjectsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   variable = "";
 // my = []
@@ -92,11 +93,17 @@ export class MyProjectsComponent implements OnInit {
       return false;
     })
 
+    
+
   }
 
   clearFilter() {
     this.variable = "";
     this.filtered = this.my;
+  }
+
+  openNewPageToCreateNewProject(){
+    this.router.navigate(['/new']);
   }
 
 }
