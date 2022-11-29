@@ -54,9 +54,11 @@ const userSchema = new mongoose.Schema(
         },
         phoneNumber: {
             type: String,
+            default: ""
         },
         address: {
             type: String,
+            default: ""
         },
         myProjects: {
             type: [Number],
@@ -67,7 +69,8 @@ const userSchema = new mongoose.Schema(
             default: []
         },
         profilePicture: {
-            type: String
+            type: String,
+            default: ""
         },
         connections: {
             type: [Number],
@@ -83,26 +86,32 @@ const userSchema = new mongoose.Schema(
             default: []
         },
         tagLine: {
-            type: String
+            type: String,
+            default: ""
         },
         liked: {
             type: [Number],
             default: []
         },
         aboutMe: {
-            type: String
+            type: String,
+            default: ""
         },
         company: {
-            type: String
+            type: String,
+            default: ""
         },
         location: {
-            type: String
+            type: String,
+            default: ""
         },
         link: {
-            type: String
+            type: String,
+            default: ""
         },
         twitter: {
-            type: String
+            type: String,
+            default: ""
         },
     },
     {

@@ -2,44 +2,53 @@
     <!-- Left Profile Panel -->
     <div class="left">
         <div class="imageDiv">
-            <img src="https://avatars.githubusercontent.com/u/52439127?v=4"
+            <img [src]="userData.profilePicture"
                 class="profilePic" />
 
             <div class="name-username-sm">
-                <h1 class="name"> Abhijeet Khamkar </h1>
-                <p class="userName">Abhijeet1710</p>
+                <h1 class="name"> {{userData.name}} </h1>
+                <p class="userName">{{userData.userName}}</p>
             </div>
         </div>
         <div *ngIf = "!editing" class="content" >
             <div class="name-username-lg">
-                <h1 class="name"> Abhijeet Khamkar </h1>
-                <p class="userName">Abhijeet1710</p>
+                <h1 class="name"> {{userData.name}} </h1>
+                <p class="userName">{{userData.userName}}</p>
             </div>
             <div style="display: flex; flex-direction:column; justify-content: center">
-                <p>DSE @ Infosys. Working on MEAN stack.</p>
+                <p> {{userData.tagLine}} </p>
+                
                 <button class="editProfileBtn" (click)="openEditProfile()"> Edit Profile </button>
             </div>
             <div class="info-div">
-                <div class="hc">
-                    
+                <div class="hc" *ngIf="userData.company.length > 0">
                     <img width="14px" height="18px"
                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAcUlEQVRIie2TQQ7AIAgEpenj/P8T7EOml9aDCQUMPZg4N8CwSzaWsvECVODCTwNqRKAFlneRiAAA2e8Pt4NJVIHRoebYnY21UKvd2WRlMPbXySAskMWpDUREvmqr/7IzMFk/g64e+cWuxc9lv1+wMbkBnnYoS4R0jv4AAAAASUVORK5CYII=">
-                    <span style="margin-left: 6px;">DSE @ Infosys</span>
+                    <span class="secondary" style="margin-left: 6px;"> {{userData.company}} </span>
                 </div>
-                <div class="hc">
+
+                <div class="hc" *ngIf="userData.address.length > 0">
                     <img width="17px" height="18px"
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABeUlEQVRIidWUMUsDQRSENzZpTMAQ0gRrQQSLtLHRSqwkWIiVFrGICvozgvb6O2IhqGBnhIB2WkqSMggaCajoZ5FZXJPLmewJ4oPlbufNm9nbt3vG/HUAcWAHqALPGlVgG4hHFc8CNwyOayAbZeVWvA4UgITGMnDnmIz+JdoWK54KyKeAhjhbPgZXKi5ovgQ0JboobEWcSx+DtooTmtvVAtSFJTV/GqQzFuLxMgTH5l59DG71zOtZNMY0jTENvRtjzFwPd/gA9vT5xyGcE3F2fQwyQAf4AGYC8rPKdYDMyAYSOdAKL4BYT+5cuX0vcYmkgZaEVh18TVgLSHsbSGxDYg/AJN3fhzVdjyQugxhQkeApcKb3Su+2DStYdC5UWdgEcO/gDbs1QNnBi+Hq3YKaU/AOLAjPA28aeWHz4tio/SSec5rX94cESkApAI87fcmFGRz5Hj2+jvThIMI48CjStIfBFN2L1waSQYRNfi/6m8335kaN8Gb/q/gEjEvW3DlP+1QAAAAASUVORK5CYII=">
-                    <span style="margin-left: 6px;">Junnar Pune</span>
+                    <span class="secondary" style="margin-left: 6px;">{{userData.address}}</span>
                 </div>
-                <div class="hc">
+
+                <div class="hc" *ngIf="userData.phoneNumber.length > 0">
+                    <img width="17px" height="17px"
+                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAeElEQVRIie2WuxGAMAxD5RxbcQzAsQeDk+whGugCSWw+Kfx668mdgB4huZBMbCeSnC3iqJCebHfZUhBT3RqAiFzmD9aAHDWFQ0vgk7jYxS52sYtd7GIXf0/V5rKOvhyWj0cA0x/igMI8VvPmoC99vAJIis7xuO2PHXQkzG3STZBiAAAAAElFTkSuQmCC">
+                    <span class="secondary" style="margin-left: 6px;">{{userData.phoneNumber}}</span>
+                </div>
+
+                <div class="hc" *ngIf="userData.link.length > 0">
                     <img width="17px" height="17px"
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAsElEQVRIie2RwQ3CMAxFDSwBXYlWTMAaZABUiaUoHaDT0F44PS4uSk2KEuAAUt4l0o/zvx2LZDL/BbADWmDAEKi1DMAFqObMT4FHKQE+dahzgBtwAIo3pi8Apx4ApX/ZquhSjQNBTr0aX+xV3JjiKMybtcpXEZGlaWDx6QQishqz/IBOz/0kLRITMHp0DwWovCW7Ly15awvq2H/W+lcc57oogcZbekpAD5yfOs9kfp87n6KIDdsSqu8AAAAASUVORK5CYII=">
-                    <span style="margin-left: 6px;">abhijeet1710.github.io</span>
+                    <span class="secondary" style="margin-left: 6px;">{{userData.link}}</span>
                 </div>
-                <div class="hc">
+                
+                <div class="hc" *ngIf="userData.twitter.length > 0">
                     <img width="17px" height="17px"
                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA+klEQVRIie2TMRKCQAxF1VsIRwKv4DEUaxlvhc7oWOlpxMbqWZgdYU12M9T+Biabn7/5H2azP6YAWAEn4EkeT+AI1N7hB8dQC63n5gAvYAMUjgsVwFY4JDcRWwC2rnU/nCtwARrhdqnmXpqKqD7MZOS5DD/LJgCPlAAAUS2VSZvjJwW0TFKeTxEwM9E8nyIQMlkqvcvYc01gYaqNMVdqgWvf2CFwk+daOQu1e2bGF4pF9SDkRgIugd0g5MriZwWk1mJjn+PHAtaPVgOdnPfyXkU9ZRy6JnCUpsZssrm7+LPVmn48dww2M7EIKc9z2CeHR5sEz3NQM/nDjTcudtgv0yZUxwAAAABJRU5ErkJggg==">
-                    <span style="margin-left: 6px;">abhikhamkar30</span>
+                    <span class="secondary" style="margin-left: 6px;">{{userData.twitter}}</span>
                 </div>
             </div>
         </div>
@@ -47,27 +56,36 @@
         <div *ngIf = "editing" class="editDetails">
             <form>
                 <label class="lbl" for="name"> Name </label> <br>
-                <input type="text" class="name" id="name"/>
+                <input name="name" type="text" class="name" id="name" [(ngModel)] = "userData.name" />
 
                 <label class="lbl" for="email"> Email Id </label> <br>
-                <input type="text" class="email" id="email"/>
+                <input name="email" type="text" class="email" id="email" [(ngModel)] = "userData.email"/>
+
+                <label class="lbl" for="password"> Password </label> <br>
+                <input name="password" type="password" class="email" id="password" [(ngModel)] = "userData.password"/>
 
                 <label class="lbl" for="phone"> Phone Number </label> <br>
-                <input type="text" class="phone" id="phone"/>
+                <input name="phone" type="text" class="phone" id="phone" [(ngModel)] = "userData.phoneNumber"/>
 
                 <label class="lbl" for="Address"> Address </label> <br>
-                <input type="text" class="Address" id="Address"/>
+                <textarea name="address" type="text" class="Address" id="Address" [(ngModel)] = "userData.address"></textarea>
 
                 <label class="lbl" for="TagLine"> TagLine </label> <br>
-                <input type="text" class="TagLine" id="TagLine"/>
+                <input name="tagLine" type="text" class="TagLine" id="TagLine" [(ngModel)] = "userData.tagLine"/>
 
                 <label class="lbl" for="name"> Twitter </label> <br>
-                <input type="text" class="name" id="Twitter"/>
+                <input name="twitter" type="text" class="name" id="Twitter" [(ngModel)] = "userData.twitter"/>
 
                 <label class="lbl" for="company"> Company </label> <br>
-                <input type="text" class="company" id="company"/>
+                <input name="company" type="text" class="company" id="company" [(ngModel)] = "userData.company" />
 
-                <button>Save</button>
+                <label class="lbl" for="profilePic"> Profile Picture </label> <br>
+                <input name="profilePic" type="text" class="company" id="profilePic" [(ngModel)] = "userData.profilePicture" />
+
+                <label class="lbl" for="link"> Link </label> <br>
+                <input name="link" type="text" class="company" id="link" [(ngModel)] = "userData.link" />
+
+                <button (click)="updateUserData()">Save</button>
                 <button style="margin-left: 10px;" (click) = "closeEditProfile()">Cancal</button>
             </form>
         </div>

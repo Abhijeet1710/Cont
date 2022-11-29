@@ -13,4 +13,8 @@ export class LoginService {
   loginUser(data: any) : Observable<any> {
     return this.http.post('http://localhost:3000/user/login', data);
   }
+
+  signUpUser(data: any) : Observable<any> {
+    return this.http.post('http://localhost:3000/user/register', data);
+  }
 }

@@ -10,7 +10,7 @@
                     <button class="btn" [matMenuTriggerFor]="beforeMenu">Before</button>
                     <mat-menu class="matMenuBox" #beforeMenu="matMenu" xPosition="before">
                         <button mat-menu-item class="menuItem">Item 1</button>
-                        <button mat-menu-item class="menuItem">Item 2</button>
+                        <button mat-menu-item class="menuItem" (click)="logout()">Log out</button>
                     </mat-menu>
                 </div>
             </div>

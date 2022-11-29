@@ -71,7 +71,7 @@ p, span {
     display: none;
 }
 
-form > input {
+form > input, textarea {
     width: 92%;
     background-color: transparent;
     border: none;
@@ -84,8 +84,10 @@ form > input {
     border: 1px solid rgb(68, 68, 68);
     color: white;
 
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
+
+
 
 form > button {
     cursor: pointer;
@@ -103,6 +105,10 @@ form > button:hover {
     background-color: rgb(1, 117, 1);
 }
 
+form > label {
+    color: rgb(124, 124, 124);
+}
+
 @media only screen and (min-width: 1000px) {
     .dashboardBody {
         display: flex;
@@ -112,6 +118,11 @@ form > button:hover {
         margin-top: 45px;
         width: 27%;
 
+    }
+
+    form > input, textarea {
+        padding: 6px 10px;
+        margin-bottom: 10px;
     }
     
     .right {

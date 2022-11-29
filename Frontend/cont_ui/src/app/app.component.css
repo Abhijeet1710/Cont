@@ -7,7 +7,14 @@
      background-color: #0D1117;
 }
 
- 
+.primary {
+    color: white;
+}
+
+.secondary {
+    color: #494949;
+}
+
 .navbar {
     background-color: #161B22;
 }

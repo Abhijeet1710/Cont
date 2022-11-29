@@ -77,6 +77,7 @@ exports.updateData = async (req, res) => {
         }
 
         const result = await userModel.updateOne(filter, updateUser, options)
+        const updatedUser = await userModel.findOne(filter);
         
         if(result.modifiedCount == 0) {
             res
@@ -86,7 +87,7 @@ exports.updateData = async (req, res) => {
         }else {
             res
             .status(200)
-            .json({ status: "success", message: "Login Successful", data: result });
+            .json({ status: "success", message: "updated Successfully", data: updatedUser });
             
         }
         
