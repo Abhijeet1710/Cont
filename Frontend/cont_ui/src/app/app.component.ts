@@ -21,6 +21,10 @@ export class AppComponent {
 
   }
 
+  getProfilePic() {
+    return JSON.parse(localStorage.getItem('user')).profilePicture;
+  }
+
   isUserLoggedIn = () => localStorage.getItem('user');
   
   getOpt1 = () => `Logged in as ${JSON.parse(localStorage.getItem('user')).userName}`;

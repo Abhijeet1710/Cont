@@ -15,9 +15,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private router : Router, private _snackBar: MatSnackBar, private dashboardService : DashboardService) { 
     const user = JSON.parse(localStorage.getItem('user'));
-    
-    console.log(user);
-
+  
     this.userData = {...user};
 
     if(!user) {

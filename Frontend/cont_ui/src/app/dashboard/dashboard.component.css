@@ -71,7 +71,13 @@ p, span {
     display: none;
 }
 
-form > input, textarea {
+.vc {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+}
+
+form > input, textarea, form > div > input {
     width: 92%;
     background-color: transparent;
     border: none;
@@ -89,7 +95,7 @@ form > input, textarea {
 
 
 
-form > button {
+.saveBtn {
     cursor: pointer;
     color: white;
     padding: 8px 24px;
@@ -97,16 +103,38 @@ form > button {
     outline: none;
     border: none;
 
-    border-radius: 4px;
+    border-radius: 6px;
     margin-top: 14px;
 }
 
-form > button:hover {
+.cancalBtn {
+    cursor: pointer;
+    color: white;
+    padding: 8px 24px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #28374d;
+
+    border-radius: 6px;
+    margin-top: 14px;
+}
+
+.saveBtn:hover {
     background-color: rgb(1, 117, 1);
 }
 
-form > label {
+.cancalBtn:hover {
+    background-color: #0d1117;
+}
+
+form > label, form > div > label {
     color: rgb(124, 124, 124);
+}
+
+.editSec {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #161b22;
 }
 
 @media only screen and (min-width: 1000px) {

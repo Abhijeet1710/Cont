@@ -11,6 +11,16 @@
     margin: 10px 0px 50px 0px;
 }
 
+.aboutMeTA {
+    width: 100%;
+    height: 200PX;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+}
+
 .secTwo {
     margin: 10px 0px 50px 0px;
 

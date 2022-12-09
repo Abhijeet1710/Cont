@@ -1,20 +1,40 @@
 <div class="overviewContent">
     <h2> About Me </h2>
-    <div class="secOne">
-        <h3> Abhijeet1710 </h3>
-        <span> DSE @ Infosys. Working on MEAN stack.
+    <div class="secOne" *ngIf="!editingAboutMe">
+        <div style="display: flex; justify-content: space-between;">
+            <h3> {{userData.name}} </h3>
+            <img (click)=" editingAboutMe = true " width="16px" height="16px" style="cursor: pointer;"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVR4nO3VMUoDQRSA4Q3mDhb2CikTa8t0XiLYe4FAAhJrK8F4B89iivSKGkhIn3SfLDxhWCzUnanM3ywzsN+DV+xWVYYwxRvmOMthNvG0Pa6rQnjaVUm8bofTUvhX85J43UdJvG5ywL/rsJb/vJbhL/Hpj/EY8IhF/anFJjd+hDXGcT7BcxY8wIt4uZfcHeO9NR7YHVboNO5HOfAOXgK5j3MfN1i2wmPAeWMN23iu4yc+/DMeA24T/BUPuES3FZwMeMIMgyxgo0+WPrnWbKTDMgAAAABJRU5ErkJggg==">
+        </div>
+        <span> {{userData.company}}
+        </span> <br>
+        <span> {{userData.tagLine}}
         </span> <br>
         <div style="border-top: 1px solid rgb(36, 36, 36); margin: 12px 0px;"></div>
         <ul>
-            <li>Hi there 👋 I am Abhijeet Pandurang Khamkar</li>
-            <li>💖 India<br> </li>
-            <li>🎓DSE (MEAN Stack Developer) at Infosys</li>
-            <li>📱 currently working on MEAN stack.</li>
-            <li>🏫 currently learning :- Angular | React | Node | MongoDb | Kotlin | Java | Javascript </li>
-            <li>📫 Email : khamkarengineering1@gmail.com </li>
+            <li *ngFor="let pt of aboutMe"> {{pt}} </li>
         </ul>
     </div>
 
+    <div *ngIf="editingAboutMe">
+        <div style="display: flex; justify-content: space-between; margin-right: 20px;">
+            <div style="display: flex; flex-direction:column">
+            <span class="secondary"> Write about you, your job, your interests etc. in points <b> seperated by coma ( , ) </b>
+                for better visualization. </span>
+            <span class="secondary"> For Ex. <br><br>
+                Hi there 👋 I am Abhijeet Pandurang Khamkar <b>,</b>   <br>
+                💖 India<b> ,</b> <br>
+                🎓DSE (MEAN Stack Developer) at Infosys<b> ,</b> <br>
+                📱 currently working on MEAN stack <br>
+            </span>
+        </div>
+            <img (click)="updateAboutMe()" width="20px" height="18px" style="cursor: pointer;"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBUlEQVR4nO3UzyoFURwH8GElyr+6PImFYkM2kpUH8ABeQdnJRmHHjh0PYWNlKSlSSimylgX3fjS5aYxj3MOZsrjf5Zzf/D7nd5o5WdbNfwiWsY1GncgkXr3nAQt1IP249DnP6E0Nbfmaw9TIFJol5BHjKZEBXAemWUqG5MFuADnIUgZzaJWQO4ymRIZwG5hmPqbJCNbz/6KiZj+A7MUgwzhtv/iE2UDNYgC5wWAMdFxqkGMzhfUG7ks1rWJNp9BJYLcfGI4C6ztRSLvRGM6/wTYDz6/y6ycaKhzPmZ/TxPSvkEhs409Ih9gF+pJAFdgLJpIhFR/IWnKkdOWsYgU9tUHdZIG8AXfnYXxwGVtiAAAAAElFTkSuQmCC">
+        </div>
+        <div class="secOne">
+            <textarea [(ngModel)]="userData.aboutMe" class="aboutMeTA" placeholder="About Me"></textarea>
+        </div>
+    </div>
     <h2>My Popular Projects </h2>
     <div class="secTwo">
         <div class="card" *ngFor="let project of my">
@@ -45,7 +65,7 @@
     <div class="secTwo">
         <div class="card" *ngFor="let project of myPart">
             <div>
-                <h3  class="projName"> {{project.name}} </h3>
+                <h3 class="projName"> {{project.name}} </h3>
                 <span style="font-weight: lighter; color: gray;"> {{project.description}} </span>
             </div>
             <div style="display: flex; justify-content: space-between; margin-top: 20px;">
@@ -63,7 +83,7 @@
                 </div>
                 <span style="color: gray;">Updated 2hrs ago</span>
             </div>
-        </div> 
+        </div>
 
     </div>
 </div>

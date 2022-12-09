@@ -23,6 +23,7 @@ import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { ChatComponent } from './chat/chat.component';
 import { PopularProjectComponent } from './popular-project/popular-project.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatInputModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
