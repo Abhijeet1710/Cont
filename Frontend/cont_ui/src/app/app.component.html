@@ -4,13 +4,37 @@
             <button class="btn">Cont</button>
             <div>
                 <div>
-                    
+
                 </div>
                 <div>
                     <button class="btn" [matMenuTriggerFor]="beforeMenu">Before</button>
                     <mat-menu class="matMenuBox" #beforeMenu="matMenu" xPosition="before">
-                        <button mat-menu-item class="menuItem">Item 1</button>
-                        <button mat-menu-item class="menuItem" (click)="logout()">Log out</button>
+                        <div *ngIf="isUserLoggedIn()">
+
+                            <button style="background-color: transparent; border: none; outline: none; padding: 10px 4px;">
+                                {{getOpt1()}}
+                            </button>
+
+                            <div style="border-top: 1px solid rgb(101, 101, 101);"></div>
+
+                            <button mat-menu-item class="menuItem" (click)="logout()"> Your profile
+                            </button>
+
+                            <button mat-menu-item class="menuItem" (click)="logout()">All Projects
+                            </button>
+
+                            <button mat-menu-item class="menuItem" (click)="logout()">My Projects
+                            </button>
+
+                            <button mat-menu-item class="menuItem" (click)="logout()">Participated Projects
+                            </button>
+
+                            <button mat-menu-item class="menuItem" (click)="logout()">Chat
+                            </button>
+                            <div style="border-top: 1px solid rgb(101, 101, 101);"></div>
+                            <button mat-menu-item class="menuItem" (click)="logout()">Log Out
+                            </button>
+                        </div>
                     </mat-menu>
                 </div>
             </div>

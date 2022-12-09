@@ -8,13 +8,20 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'cont_ui';
+  menuOpt1 = ""
 
-  constructor(private router : Router) {
-
+  constructor(private router: Router) {
   }
+  ngOnInit(): void {}
 
   logout() {
+
     localStorage.removeItem('user');
     this.router.navigate(['/SignIn']);
+
   }
+
+  isUserLoggedIn = () => localStorage.getItem('user');
+  
+  getOpt1 = () => `Logged in as ${JSON.parse(localStorage.getItem('user')).userName}`;
 }
