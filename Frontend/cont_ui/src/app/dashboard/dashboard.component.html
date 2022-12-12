@@ -126,7 +126,7 @@
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAf0lEQVRIie2UMRJAMBBFf4xDKJzE6LiHzr3cSxeFW3yFDSmIBEOzbyYzv/jZt2kCKH9jXCDJi+4MYJDcASiCg40xqYIknGCDwtkFkjV3qkDveM6V4G4nC5XfQAUqUMEHgtzLE4Ay5tOL6FgX/Bf0InmKlVlpkGxJjnKaFxZRVhby6Fr+zZDCrgAAAABJRU5ErkJggg==">
                     <span style="margin-left: 10px;">Overview</span>
                 </ng-template>
-                <app-overview></app-overview>
+                <app-overview [myPro] = "allProjects"></app-overview>
                 <!-- <app-my-projects></app-my-projects> -->
             </mat-tab>
 
@@ -154,7 +154,7 @@
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAn0lEQVRIie2T0Q2DMAxE76quQTfpP5N0UxYhe3D9AcmyTIoTxE95X4nknH2XBLjJIGmUVNTOLGm0mnQNZgBD55yF5GvPgSSpVTk6/6wUTwAWkm+73oRsLUlGGgDwqAy0AFCwbueyiHqaeGoRnULowF7a5qZ2kb72Z4OsSOsrOoW0gyNRdTX4v4gud1AADFHOid9d7MY7+PiCJGXVuDnOFz7HnYo5sq+pAAAAAElFTkSuQmCC">
                     <span style="margin-left: 10px;">All Projects</span>
                 </ng-template>
-                <app-all-projects></app-all-projects>
+                <app-all-projects *ngIf = "allProjects" [my] = "allProjects"></app-all-projects>
             </mat-tab>
             <mat-tab>
                 <ng-template mat-tab-label>

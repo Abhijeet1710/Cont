@@ -39,15 +39,15 @@
     <div class="secTwo">
         <div class="card" *ngFor="let project of my">
             <div>
-                <span class="projName"> {{project.name}} </span> <br>
-                <span style="font-weight: lighter; color: gray;"> {{project.description}} </span>
+                <span class="projName"> {{project.projectName}} </span> <br>
+                <span style="font-weight: lighter; color: gray;"> {{project.projectDescription}} </span>
             </div>
             <div style="display: flex; justify-content: space-between; margin-top: 10px;">
                 <div style="display: flex;">
                     <span class="hc">
                         <img width="18px" height="18px"
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABgUlEQVRIidWVwS4DURRAz6UISxWJaEKxkNhp/6NtfMRssEA0EZJJSERrZ+UXGmHqO1o7EkmphVigsyTR6rUwasxUSzub3t277805d9678wZ6PaTVpGleDoZDIykgIbCoEHEeule4EFHrufpqmebC278FR3t3S6AZYKZNkTeqsrm6M336J0Eup/2P1+UDFVlvA/aiDiu1qbRpSt2d7fMu6wwOoBvh0N2+T+seONty8n+420NqZSdq+QTOgV4Bs10JoFypvcx/HXxji5xu6RYOEA2HhhNfg+8zUJIBwAEQaCIQYkEJQOJ+ATIRFF6RySaCIEMb34JLoA8BGhos9xsUA8OrFHwCEbWar+6ATz3vEwyM2WcgpQD4t/b767lPYBjxqirpbukCa+7r+0cXfV65ctgpXJWD5e1o3p3ztWmlNpUWlWwH/Iz9Pr3lTf7+w9ktJxHJgs615kpJ0A1v5W0FAMfHhYG3p9GkQEKRGEjkc0bvBS3WFWto3M4bRrzauohejg/Eun6EtLqm5gAAAABJRU5ErkJggg==">
-                        <span style="margin-left: 4px; color: gray">{{project.tech}}</span>
+                        <span style="margin-left: 4px; color: gray">{{project.techStackRequire}}</span>
                     </span>
                     <span class="hc" style="margin-left: 10px">
                         <img width="18px" height="18px"

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DashboardService } from '../dashboard/dashboard.service';
 
 @Component({
   selector: 'app-all-projects',
@@ -7,63 +8,69 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllProjectsComponent implements OnInit {
 
-  constructor() { }
   variable = "";
-  my = [
-    {
-      name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
-      tech: ["Kotlin", "Java", "Android", "Kotlin", "Java", "Android", "Kotlin", "Java", "Android"],
-      likes: 20
-    },
-    {
-      name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
-      tech: ["Kotlin"],
-      likes: 20
-    },
-    {
-      name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
-      tech: ["C++", "Kotlin"],
-      likes: 20
-    },
-    {
-      name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
-      tech: ["Kotlin"],
-      likes: 20
-    },
-    {
-      name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
-      tech: ["Kotlin"],
-      likes: 20
-    },
-    {
-      name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
-      tech: ["Kotlin"],
-      likes: 20
-    },
-    {
-      name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
-      tech: ["Kotlin"],
-      likes: 20
-    },
-    {
-      name: "Github API",
-      description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
-      tech: ["Kotlin"],
-      likes: 20
-    }
+  // my = [
+  //   {
+  //     name: "Github API",
+  //     description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+  //     tech: ["Kotlin", "Java", "Android", "Kotlin", "Java", "Android", "Kotlin", "Java", "Android"],
+  //     likes: 20
+  //   },
+  //   {
+  //     name: "Github API",
+  //     description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+  //     tech: ["Kotlin"],
+  //     likes: 20
+  //   },
+  //   {
+  //     name: "Github API",
+  //     description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+  //     tech: ["C++", "Kotlin"],
+  //     likes: 20
+  //   },
+  //   {
+  //     name: "Github API",
+  //     description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+  //     tech: ["Kotlin"],
+  //     likes: 20
+  //   },
+  //   {
+  //     name: "Github API",
+  //     description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+  //     tech: ["Kotlin"],
+  //     likes: 20
+  //   },
+  //   {
+  //     name: "Github API",
+  //     description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+  //     tech: ["Kotlin"],
+  //     likes: 20
+  //   },
+  //   {
+  //     name: "Github API",
+  //     description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+  //     tech: ["Kotlin"],
+  //     likes: 20
+  //   },
+  //   {
+  //     name: "Github API",
+  //     description: "📒 GitHub Profile is a complete 💎Kotlin-Android 📱 application built to demonstrate the use of Modern development tools with best practices implementation",
+  //     tech: ["Kotlin"],
+  //     likes: 20
+  //   }
 
-  ]
+  // ]
+  filtered : any;
+  @Input() my;  
 
-  filtered : any = this.my;
+  constructor(private dashboardService : DashboardService) { 
+    
+    
+   }
 
   ngOnInit(): void {
+    this.filtered = this.my; 
+    console.log(this.my);
   }
 
   filterData(newVal: any) {

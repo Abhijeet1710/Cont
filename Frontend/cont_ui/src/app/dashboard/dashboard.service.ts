@@ -13,4 +13,8 @@ export class DashboardService {
   updateUserData = (userData) : Observable<any> => {
     return this.http.post('http://localhost:3000/user/update', userData);
   }
+
+  getAllProjects = () : Observable<any> => {
+    return this.http.get('http://localhost:3000/projects');
+  }
 }
