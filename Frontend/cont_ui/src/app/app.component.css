@@ -37,8 +37,8 @@
 .profilePic {
     border-radius: 50%;
     height: 26px;
-    width: 26;
-    border: 1px solid rgb(164, 164, 247);
+    width: 26px;
+    border: 1px solid black;
 }
 
 @media only screen and (min-width: 1000px) {

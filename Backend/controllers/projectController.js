@@ -29,7 +29,8 @@ exports.getProject = async (req, res) => {
 }
 
 exports.addProject = async (req, res) => {
-
+    console.log("In Add Project");
+    
     try {
 
         const totalProjects = await projectModel.find({});

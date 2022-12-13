@@ -1,4 +1,4 @@
-const {mongoose} = require('./userModel');
+const { mongoose } = require('./userModel');
 
 const projectSchema = new mongoose.Schema({
     projectId: {
@@ -42,13 +42,21 @@ const projectSchema = new mongoose.Schema({
     },
     projectPic: {
         type: String,
+        default: ""
     },
     liked: {
         type: [Number],
         default: []
     }
-})
+},
+{
+    timestamps: {
+        createdAt: true,
+        updatedAt: true
+    }
+}
+)
 
 const projectModel = mongoose.model('projects', projectSchema);
 
-module.exports = {projectModel};
+module.exports = { projectModel };

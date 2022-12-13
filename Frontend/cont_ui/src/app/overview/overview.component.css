@@ -63,6 +63,16 @@
 
 }
 
+.backOnHov {
+    height: 28px;
+    width: 28px;
+    border-radius: 14px;
+}
+
+.backOnHov:hover {
+    background-color: rgb(255, 255, 255);
+}
+
 .projName:hover {
     color: #0077ff;
     text-decoration: underline;

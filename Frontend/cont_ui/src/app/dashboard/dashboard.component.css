@@ -12,7 +12,7 @@
     height: 60px;
     width: 60px;
     margin-bottom: 20px;
-    border: 1px solid rgb(164, 164, 247);
+    border: 1px solid black;
 }
 
 p, span {
@@ -21,6 +21,10 @@ p, span {
 
 .name, .userName, .sp {
     margin: 0px;
+}
+
+.userName {
+    font-size: 24px;
 }
 
 .editProfileBtn {
