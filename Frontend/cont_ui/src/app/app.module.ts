@@ -24,6 +24,7 @@ import { ChatComponent } from './chat/chat.component';
 import { PopularProjectComponent } from './popular-project/popular-project.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ParticipatedProjectsComponent,
     AllProjectsComponent,
     ChatComponent,
-    PopularProjectComponent
+    PopularProjectComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

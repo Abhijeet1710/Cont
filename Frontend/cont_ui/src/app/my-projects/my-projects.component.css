@@ -1,6 +1,6 @@
 .myProjectContent {
     width: 92%;
-    margin: auto;  
+    margin: auto;
 }
 
 .ago {
@@ -14,8 +14,27 @@
 }
 
 .projName:hover {
+    text-decoration: underline;
     color: #7AAEEB;
 }
+
+
+.btnCreate {
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: rgb(5, 138, 5);
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.btnCreate:hover {
+    background-color: rgb(2, 109, 2);
+}
+
 
 .chip {
     color: black;
@@ -45,7 +64,7 @@
     color: white;
     border: 1px solid rgb(68, 68, 68);
     padding: 10px 10px;
-    
+
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: transparent;
@@ -83,8 +102,9 @@
 .searchSec {
     display: flex;
     align-items: center;
-    
+
 }
+
 .lg {
     display: none;
 }
@@ -96,20 +116,21 @@
 .nothingBox {
     border: 1px solid rgb(68, 68, 68);
     border-radius: 6px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 70px 0px;
     padding: 40px 0px;
 }
+
 .addBtn2 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 150px;
     border-radius: 8px;
-    padding: 6px  ;
+    padding: 6px;
     background-color: green;
 
     cursor: pointer;
@@ -120,7 +141,7 @@ flex-direction: column;
     background-color: rgb(0, 110, 0);
 }
 
-@media only screen and (min-width: 1000px) { 
+@media only screen and (min-width: 1000px) {
 
     .myProjectContent {
         width: 100%;

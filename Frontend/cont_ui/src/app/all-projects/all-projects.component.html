@@ -1,14 +1,10 @@
 <div class="myProjectContent">
-    <div *ngIf="my.length > 0">
+    <div *ngIf="allProjects.length > 0">
         <div class="box">
             <div class="searchSec">
                 <input [(ngModel)]="variable" (ngModelChange)="filterData($event)" class="searchBox" type="text"
                     placeholder="Find a Project ...">
-                <div class="addBtn">
-                    <img width="16px" height="16px"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAjklEQVRIie2WWwrCQBAEezyHeB6D9/Dgmdyj/BFkXyRrNqI49T10MQy9rBQEGcANWHjhwPQJsVMy9+bYG2KqQWZdWade8ShC/IfiSk8TWkGt+VbPiwoALum8e6UUN7PLmri51R7ynn/PjSUtB3h8i/g+WO7PzIR4q0McYqletaKnwwGm7N81A9fDxcHP8QBI05mbXx2tsAAAAABJRU5ErkJggg==">
-                    <span style="margin-left: 4px;" class="lg">New</span>
-                </div>
+                    <button routerLink="/new" class="btnCreate">Create</button>
             </div>
 
             <div *ngIf="variable.length > 0" style="margin-bottom: 30px;">
@@ -31,8 +27,8 @@
                 <div style="border-top: 1px solid rgb(68, 68, 68);"></div>
 
                 <h3 class="projName"> {{project.projectName}} </h3>
-                <span style="font-weight: lighter;"> {{project.projectDescription}} </span>
-                <div class="lg" style="margin-top: 10px;">
+                <span style="font-weight: lighter;" class="secondary"> {{project.projectDescription}} </span>
+                <div class="lg" style="margin-top: 8px;">
                     <span style="margin: 10px 6px 10px 0px;" class="chip"> {{project.techStackRequire}} </span>
                 </div>
                 <div style="display: flex; justify-content: space-between;">
@@ -42,22 +38,18 @@
                         <span style="margin-left: 4px"> {{project.liked.length}}</span>
                     </span>
 
-                    <p class="ago" style="font-weight: lighter;">Updated 2 Minutes ago</p>
+                    <p class="ago" style="font-weight: lighter;">Updated {{time_ago(project.updatedAt)}}</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="" *ngIf="my.length == 0" class="nothingBox">
+    <div class="" *ngIf="allProjects.length == 0" class="nothingBox">
         <img width="30px" height="30px"
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAhUlEQVRIie2T0Q2AIAxEr85hHMTgAMY9XLzscf5IQhANhn4Y5H2R9nJHSQGageRG0rMeJbkGX4kCFMBodF8VkSmdIDDfTOjeaHLNfKNSMzyJLegBPSAPSXdTX9Ja/JMJACIiqSjVlBB8vvlEPw94syElXLbIitwWeUN/DYc4YDcK0dOrEQ6MFa0f+Wf+DgAAAABJRU5ErkJggg==">
         <h3>Create your first Cont project</h3>
         <span style="font-weight: lighter;">Projects are a customizable, flexible tool for planning and tracking your
             team.</span>
-        <span class="addBtn2">
-            <img width="16px" height="16px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAjklEQVRIie2WWwrCQBAEezyHeB6D9/Dgmdyj/BFkXyRrNqI49T10MQy9rBQEGcANWHjhwPQJsVMy9+bYG2KqQWZdWade8ShC/IfiSk8TWkGt+VbPiwoALum8e6UUN7PLmri51R7ynn/PjSUtB3h8i/g+WO7PzIR4q0McYqletaKnwwGm7N81A9fDxcHP8QBI05mbXx2tsAAAAABJRU5ErkJggg==">
-            <span style="margin-left: 4px;">New</span>
-        </span>
+        <button class="btnCreate" routerLink="/new"> Create </button>
     </div>
 </div>

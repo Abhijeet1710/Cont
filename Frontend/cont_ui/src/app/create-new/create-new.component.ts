@@ -58,7 +58,6 @@ export class CreateNewComponent implements OnInit {
         },
         (err) => {
           console.log(err);
-          
         }
       )
   }

@@ -95,7 +95,7 @@ const userSchema = new mongoose.Schema(
         },
         aboutMe: {
             type: String,
-            default: ""
+            default: "Hey user add here anything about your personal and professional life. For Ex. , 💖 India, 🎓DSE (MEAN Stack Developer) at Infosys"
         },
         company: {
             type: String,

@@ -41,12 +41,12 @@
     </div>
 
     <div style="margin-top: 20px;"> 
-        <label> Tech Stack Require <span class="secondary"> (Seperated by <b> , </b>) </span> </label> <br>
+        <label> Tech Stack Require <span class="secondary"> (Maximum 3, Seperated by <b> , </b>) </span> </label> <br>
         <input [(ngModel)] = "techStackRequire" placeholder="Type here technology experts you are looking for. For Ex. Java, React, Angular, SpringBoot etc " class="ipBox" style="width: 90%;" type="text" />
     </div>
 
     <div style="margin-top: 20px;"> 
-        <label> Project Domain </label> <br>
+        <label> Project Domain <span class="secondary"> (Maximum 3, Seperated by <b> , </b>) </span>  </label> <br>
         <input [(ngModel)] = "projectDomain" placeholder="For Ex. Healthcare, Manufacturing etc." class="ipBox" style="width: 90%;" type="text" />
     </div>
 
@@ -55,10 +55,5 @@
         <button (click)="cancel()" class="btnCancel">Cancel</button>
     </div>
 
-    <div style="border-top: 1px solid rgb(36, 36, 36); margin-top: 20px;"></div>
-
-    <div class="footer">
-        <span style="font-size: 16px; font-weight: lighter;" class="secondary">All copyrights are reserved @abhijeetkhamkar30</span>
-        <span style="font-size: 16px; font-weight: lighter;" class="secondary">Made with love 💕 by Abhijeet1710</span>
-    </div>
+    
 </div>

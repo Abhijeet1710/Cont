@@ -21,6 +21,10 @@ export class AppComponent {
 
   }
 
+  openYourProfile() {
+    this.router.navigate(['dashboard']);
+  }
+
   getProfilePic() {
     return JSON.parse(localStorage.getItem('user')).profilePicture;
   }

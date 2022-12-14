@@ -41,7 +41,8 @@
                 <div class="hc" *ngIf="userData.link.length > 0">
                     <img width="17px" height="17px"
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAsElEQVRIie2RwQ3CMAxFDSwBXYlWTMAaZABUiaUoHaDT0F44PS4uSk2KEuAAUt4l0o/zvx2LZDL/BbADWmDAEKi1DMAFqObMT4FHKQE+dahzgBtwAIo3pi8Apx4ApX/ZquhSjQNBTr0aX+xV3JjiKMybtcpXEZGlaWDx6QQishqz/IBOz/0kLRITMHp0DwWovCW7Ly15awvq2H/W+lcc57oogcZbekpAD5yfOs9kfp87n6KIDdsSqu8AAAAASUVORK5CYII=">
-                    <a class="secondary" style="margin-left: 6px;" [href]="userData.link" target="_blank">{{userData.link}}</a>
+                    <a class="secondary" style="margin-left: 6px;" [href]="userData.link"
+                        target="_blank">{{userData.link}}</a>
                 </div>
 
                 <div class="hc" *ngIf="userData.twitter.length > 0">
@@ -126,17 +127,19 @@
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAf0lEQVRIie2UMRJAMBBFf4xDKJzE6LiHzr3cSxeFW3yFDSmIBEOzbyYzv/jZt2kCKH9jXCDJi+4MYJDcASiCg40xqYIknGCDwtkFkjV3qkDveM6V4G4nC5XfQAUqUMEHgtzLE4Ay5tOL6FgX/Bf0InmKlVlpkGxJjnKaFxZRVhby6Fr+zZDCrgAAAABJRU5ErkJggg==">
                     <span style="margin-left: 10px;">Overview</span>
                 </ng-template>
-                <app-overview [myPro] = "allProjects"></app-overview>
-                <!-- <app-my-projects></app-my-projects> -->
+                <app-overview
+                 *ngIf="myPopularProjects && participatedPopularProjects" [myPopularProjects]="myPopularProjects"
+                    [participatedPopularProjects]="participatedPopularProjects">
+                </app-overview>
             </mat-tab>
 
             <mat-tab>
                 <ng-template mat-tab-label>
                     <img
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAbElEQVRIie2VSw6AMAhEwXj/S6nnwm1jO0whLuctbZlPTKiZ6BIRT+xzIR1PDKISyN2hVpqYCbNGPl7sJGNzx+qA1gWCq7nJ4G9kIAMZmJ3fD9Ulx+bGBndHGDAvu91ECLS/sn9QaQQfHEF5ASX3eeqmN1jHAAAAAElFTkSuQmCC">
-                    <span style="margin-left: 10px;">Projects</span>
+                    <span style="margin-left: 10px;">My Projects</span>
                 </ng-template>
-                <app-my-projects></app-my-projects>
+                <app-my-projects *ngIf="myProjects" [myProjects]="myProjects"></app-my-projects>
             </mat-tab>
 
             <mat-tab>
@@ -146,7 +149,7 @@
                     <span style="margin-left: 10px;">Participated</span>
                 </ng-template>
 
-                <app-participated-projects></app-participated-projects>
+                <app-participated-projects *ngIf="participatedProjects" [participatedProjects]="participatedProjects"></app-participated-projects>
             </mat-tab>
             <mat-tab>
                 <ng-template mat-tab-label>
@@ -154,7 +157,7 @@
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAn0lEQVRIie2T0Q2DMAxE76quQTfpP5N0UxYhe3D9AcmyTIoTxE95X4nknH2XBLjJIGmUVNTOLGm0mnQNZgBD55yF5GvPgSSpVTk6/6wUTwAWkm+73oRsLUlGGgDwqAy0AFCwbueyiHqaeGoRnULowF7a5qZ2kb72Z4OsSOsrOoW0gyNRdTX4v4gud1AADFHOid9d7MY7+PiCJGXVuDnOFz7HnYo5sq+pAAAAAElFTkSuQmCC">
                     <span style="margin-left: 10px;">All Projects</span>
                 </ng-template>
-                <app-all-projects *ngIf = "allProjects" [my] = "allProjects"></app-all-projects>
+                <app-all-projects *ngIf="all" [allProjects]="all"></app-all-projects>
             </mat-tab>
             <mat-tab>
                 <ng-template mat-tab-label>
