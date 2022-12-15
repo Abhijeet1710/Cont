@@ -7,6 +7,8 @@ const routing = express.Router();
 
 routing.get('/users', userController.getAllUsers);
 
+routing.post('/users/usersPresentInArray', userController.getUsersPresentInArray);
+
 routing.get('/user/:userId', userController.getUser);
 
 routing.post('/user/register', userController.registerUser);

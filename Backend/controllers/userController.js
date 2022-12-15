@@ -22,6 +22,22 @@ exports.getUser = async (req, res) => {
     }
 }
 
+exports.getUsersPresentInArray = async (req, res) => {
+    try {
+        const result = await userModel.find({userId: {$in: req.body.userIds}});
+
+        res
+        .status(200)
+        .json({ status: "success", message: "MSG", data: result });
+        
+    }catch(err) {
+        res
+        .status(4001)
+        .json({ status: "failure", message: err, data: {} });
+        
+    }
+}
+
 exports.registerUser = async (req, res) => {
 
     try {
