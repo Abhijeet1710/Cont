@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DashboardService } from '../dashboard/dashboard.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class AllProjectsComponent implements OnInit {
   @Input() allProjects;
   filtered : any;
 
-  constructor(private dashboardService : DashboardService) { }
+  constructor(private router : Router, private dashboardService : DashboardService) { }
 
   ngOnInit(): void {
     this.filtered = this.allProjects; 
@@ -105,4 +106,8 @@ export class AllProjectsComponent implements OnInit {
     this.filtered = this.allProjects;
   }
 
+  openProject(projectToOpen) {
+    console.log(projectToOpen);
+    this.router.navigate(['dashboard/project/'+projectToOpen.projectId]);
+  }
 }

@@ -17,4 +17,11 @@ export class ProjectService {
     return this.httpClient.post(`http://localhost:3000/users/usersPresentInArray`, {userIds});
   }
   
+  sendRequest(projectId, userId) : Observable<any> {
+    return this.httpClient.post(`http://localhost:3000/project/addRequest`, {userId, projectId});
+  }
+
+  acceptRequest(projectId, userId) : Observable<any> {
+    return this.httpClient.post(`http://localhost:3000/project/acceptRequest`, {userId, projectId});
+  }
 }

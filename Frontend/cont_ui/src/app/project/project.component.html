@@ -1,11 +1,17 @@
-<div class="main">
-    <div class="bl vc" style="font-size: 18px;">
-        <img width="24px" height="26px"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAAE3ElEQVR4nO2cTWhcVRSAv/MmmdKi1qXYjVhUCBS7LLpyW4XiqnYSdza66ML+TBLnTelIM0lnXqO1gmhqq4uZsVU3QsGdK7soCrZQKmIFNwU3ggWJND/vuJjU1pDOTzNv7u2b88Fs5h3uOXM/zns3L/c9MAzDMAzDMAxj0JCNDjA6UdZeFJIUApVaNZxyXcf9CFwXkDQKk2MT5ROu67gfqRcAfksYCAHgr4SBEQB+SkijgOVWB1cllPpVTDtSKED20V7CMV86IXUC6tXC16qao7NOcC4hdQIAGlHxKxFGeQgkpFIAQK0SfonqGJ5LSK0AgHpUvKDC68BKqziXElItAKBRCc+r8gYQt4pzJSH1AgAaUfi5IF5KGAgBALVq4TOU/XgmYWAEANSj8JxvEgZKADQlKDKOJxIGTgBAo1o4K8qbQMv/ZfRDwkAKAKhF4aeIOJcwsAIA6pXCGYW3cChhoAUANKrhvCgHcSRh4AUA1KLwA9BD7eKSkGACVqlXi6dAD7aL67UEE3AP9WrxlCp97QQTsIZGFL4voofbxfVKgglYh1ql+B5wpF2cwuRGc5mA+1CvhnMqmk86jwloQaNSPCkwkWQOE9CGWjWMFBLbRTGU1MCu8H2v6lqsAxxjAhxjAhxjAhxjAhxjAhxjAhxjAhxjAhxjAhxjAhyTWgEKt0FOB7HsCuLsI82P7EL4sHnMD1J3Mw4A4WZA5uVaZerqmiOXgcu5fPkcARdRtrko715S1wEKt2X9yf+PRhRe0ZhXfOiE1AkQ5JNWk3+HRhReATnTj5pa4fwUVK+GXb2vot39fiWudzqWENdBDnSTv9ekrgOWtixf7zR2ccvytSRr6YTUCeiG7J/uf7/zAnrN8MLQSMfBm7uITYjUCRCRsU5jlWA0yVo6IXUCVBnP5cs728Xl8uWdgo73o6ZWpE6AwCYJuNhKQi5f3ikBF4FsH0tbF+fL0ERQtolwOTcxMy/E9TurnaG/szskICfoOOp+8sEDAQnu48kKegDkQHZhuPlN4N+WodSdgh42TIBjTIBjTIBjfBWgzb358sVGxxGkvrrP378rMB6sgtZBFX27USmeBtg3Of2RxMG7IvoSnb/pV4HvUDlWiwqXAHIT04uCnOpijL7g3auLRfTw6iNC/+O1qdmnMvHKblReRBgBeVLRrQCC3BLim6ryswbyfSzy7fkT7/y+doyxyelDqjLXy3q7vZ2+Fq8EiEpYiwozvRpvPXotYaMCvLkGqMrRpCcfmg/g9ePZr07xRcBsIypM9ytZo1I8Ccz2K18r/BAg7MlNzT7dr3R788e3I+zpV75W+LEKUkaE+KfRyZkjz2xePFsqlVq+TOlBKZVKwY1/svtVNUJ5NIkc3eJHBwAoj6E6/+vC8A+5/Mxu0B4uF1Vy+ZndNxaGflTVj8GPyQfPVkFr+EVE55di/eZCdPS3Bxlgb/749kwgr6KyX+DZXhcIG18F+XEKWp/nVGVuSGRudLJ8HdVLiFyNY7mWkZU/VoaCvzZll24B3F4c3ppZjh9f0cwTGYl3xMjzIryAMuLn37938VnAXZQRkBEUAlGUgGAZlpab9/kDaH4niiLNtvZ84u/gzzVgQDEBjjEBjjEBjjEBjjEBjjEBjjEBjjEBjjEBjjEBhmEYhmEYhmEYfeZftgm8vcj6jLUAAAAASUVORK5CYII=">
-        <span style="margin-top: 6px; margin-left: 8px;">
-            <span class="under"> {{userData.userName}} </span> /
-            <span class="under"> {{projectData.projectName}} </span>
-        </span>
+<div class="main" *ngIf = "projectData">
+    <div class="bl vc" style="font-size: 18px; display: flex; justify-content: space-between;">
+        <div>
+            <img width="24px" height="26px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAAE3ElEQVR4nO2cTWhcVRSAv/MmmdKi1qXYjVhUCBS7LLpyW4XiqnYSdza66ML+TBLnTelIM0lnXqO1gmhqq4uZsVU3QsGdK7soCrZQKmIFNwU3ggWJND/vuJjU1pDOTzNv7u2b88Fs5h3uOXM/zns3L/c9MAzDMAzDMAxj0JCNDjA6UdZeFJIUApVaNZxyXcf9CFwXkDQKk2MT5ROu67gfqRcAfksYCAHgr4SBEQB+SkijgOVWB1cllPpVTDtSKED20V7CMV86IXUC6tXC16qao7NOcC4hdQIAGlHxKxFGeQgkpFIAQK0SfonqGJ5LSK0AgHpUvKDC68BKqziXElItAKBRCc+r8gYQt4pzJSH1AgAaUfi5IF5KGAgBALVq4TOU/XgmYWAEANSj8JxvEgZKADQlKDKOJxIGTgBAo1o4K8qbQMv/ZfRDwkAKAKhF4aeIOJcwsAIA6pXCGYW3cChhoAUANKrhvCgHcSRh4AUA1KLwA9BD7eKSkGACVqlXi6dAD7aL67UEE3AP9WrxlCp97QQTsIZGFL4voofbxfVKgglYh1ql+B5wpF2cwuRGc5mA+1CvhnMqmk86jwloQaNSPCkwkWQOE9CGWjWMFBLbRTGU1MCu8H2v6lqsAxxjAhxjAhxjAhxjAhxjAhxjAhxjAhxjAhxjAhxjAhyTWgEKt0FOB7HsCuLsI82P7EL4sHnMD1J3Mw4A4WZA5uVaZerqmiOXgcu5fPkcARdRtrko715S1wEKt2X9yf+PRhRe0ZhXfOiE1AkQ5JNWk3+HRhReATnTj5pa4fwUVK+GXb2vot39fiWudzqWENdBDnSTv9ekrgOWtixf7zR2ccvytSRr6YTUCeiG7J/uf7/zAnrN8MLQSMfBm7uITYjUCRCRsU5jlWA0yVo6IXUCVBnP5cs728Xl8uWdgo73o6ZWpE6AwCYJuNhKQi5f3ikBF4FsH0tbF+fL0ERQtolwOTcxMy/E9TurnaG/szskICfoOOp+8sEDAQnu48kKegDkQHZhuPlN4N+WodSdgh42TIBjTIBjTIBjfBWgzb358sVGxxGkvrrP378rMB6sgtZBFX27USmeBtg3Of2RxMG7IvoSnb/pV4HvUDlWiwqXAHIT04uCnOpijL7g3auLRfTw6iNC/+O1qdmnMvHKblReRBgBeVLRrQCC3BLim6ryswbyfSzy7fkT7/y+doyxyelDqjLXy3q7vZ2+Fq8EiEpYiwozvRpvPXotYaMCvLkGqMrRpCcfmg/g9ePZr07xRcBsIypM9ytZo1I8Ccz2K18r/BAg7MlNzT7dr3R788e3I+zpV75W+LEKUkaE+KfRyZkjz2xePFsqlVq+TOlBKZVKwY1/svtVNUJ5NIkc3eJHBwAoj6E6/+vC8A+5/Mxu0B4uF1Vy+ZndNxaGflTVj8GPyQfPVkFr+EVE55di/eZCdPS3Bxlgb/749kwgr6KyX+DZXhcIG18F+XEKWp/nVGVuSGRudLJ8HdVLiFyNY7mWkZU/VoaCvzZll24B3F4c3ppZjh9f0cwTGYl3xMjzIryAMuLn37938VnAXZQRkBEUAlGUgGAZlpab9/kDaH4niiLNtvZ84u/gzzVgQDEBjjEBjjEBjjEBjjEBjjEBjjEBjjEBjjEBjjEBhmEYhmEYhmEYfeZftgm8vcj6jLUAAAAASUVORK5CYII=">
+            <span style="margin-top: 6px; margin-left: 8px;">
+                <span class="under"> {{userData.userName}} </span> /
+                <span class="under"> {{projectData.projectName}} </span>
+            </span>
+        </div>
+        <div *ngIf = "hasAccesToSendRequest()">
+            <span *ngIf = "!hasSentRequest()" class="chip" (click)="sendRequest()">Request</span>
+            <span *ngIf = "hasSentRequest()" class="chip" >Requested</span>
+        </div>
     </div>
     <div style="border-top: 1px solid rgb(36, 36, 36); margin: 20px 0px;">
     </div>
@@ -29,8 +35,10 @@
         <div>
             <div class="center">
                 <span (click)="isCurrTeamOpen = !isCurrTeamOpen" class="box" [ngClass]="{'filled': isCurrTeamOpen}">
+                    <div style="display: flex;">
                     <p> Current Team mebers </p>
-
+                    <p class="" style="margin-left: 8px;">0{{ contributors.length }}</p>
+                </div>
                     <img *ngIf="!isCurrTeamOpen" width="20px" height="20px" style="margin-top: 14px;"
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA60lEQVRIie3UPUoDQRyG8WgRLAQbIfZ7ACtLrbxCSluvkCt4B0t7wcJSbSIkhWdIY6NgKYJIfjYTWCbrZHSnEeaB6f7v+8x+zAwGlUqlUgLc4wlNwc4mdN6lhla84bSA9ASvq9IcMXxh0kN6js92YWp4Zp1LDH8hHIZMzCwV2sV1R+gRBxnSfTx05G+xtym8hQmWUfgZR4ncIRZRZokLbG/adLtojPeo6ANnfWZz5cmn+OvbyZWPMO34bjdhxUwx6iVtyX/6U2OusFNEGm1g7WwGep35XPkxXlrSIrdcrrzBPKxi93qlUvlffANtCRmg5ZHN/QAAAABJRU5ErkJggg==">
 
@@ -60,8 +68,11 @@
 
             <div class="center">
                 <span (click)="isRequestsOpen = !isRequestsOpen" class="box" [ngClass]="{'filled': isRequestsOpen}">
-                    <p> Contribution Requests </p>
-
+                    <div style="display: flex;">
+                        <p>Contribution Requests</p>
+                        <p class="" style="margin-left: 8px;">0{{ requests.length }}</p>
+                    </div>
+                    
                     <img *ngIf="!isRequestsOpen" width="20px" height="20px" style="margin-top: 14px;"
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAA60lEQVRIie3UPUoDQRyG8WgRLAQbIfZ7ACtLrbxCSluvkCt4B0t7wcJSbSIkhWdIY6NgKYJIfjYTWCbrZHSnEeaB6f7v+8x+zAwGlUqlUgLc4wlNwc4mdN6lhla84bSA9ASvq9IcMXxh0kN6js92YWp4Zp1LDH8hHIZMzCwV2sV1R+gRBxnSfTx05G+xtym8hQmWUfgZR4ncIRZRZokLbG/adLtojPeo6ANnfWZz5cmn+OvbyZWPMO34bjdhxUwx6iVtyX/6U2OusFNEGm1g7WwGep35XPkxXlrSIrdcrrzBPKxi93qlUvlffANtCRmg5ZHN/QAAAABJRU5ErkJggg==">
 
@@ -70,12 +81,11 @@
 
                 </span><br>
                 <div *ngIf="isRequestsOpen">
-                    <div class="userCard" style="padding: 0px 10px;" *ngFor="let user of contributors; let i = index;">
+                    <div class="userCard" style="padding: 0px 10px;" *ngFor="let user of requests; let i = index;">
                         <span style="display: flex; justify-content: space-between;">
                             <span class="bl" style="font-size: 22px;">{{ user.name }}</span>
-                            <span class="secondary">
-                                <span class="chip" *ngIf="user.userId == projectData.projectAdmin"> Admin </span>
-                                <span class="chip" *ngIf="user.userId != projectData.projectAdmin"> Member </span>
+                            <span class="secondary" *ngIf="hasAccesToAcceptRequest()">
+                                <span class="chip" (click)="acceptRequest(user)"> Accept </span>
                             </span>
                         </span>
 
