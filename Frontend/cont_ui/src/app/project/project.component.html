@@ -1,9 +1,9 @@
 <div class="main" *ngIf="projectData">
     <div class="bl vc" style="font-size: 18px; display: flex; justify-content: space-between;">
-        <div style="display: flex;">
+        <div *ngIf = "contributors[0]"  style="display: flex;">
             <img class="profilePic" [src]="contributors[0].profilePicture">
             <span style=" margin-left: 10px; margin-top: 10px;">
-                <span class="under" style="font-size: 28px;"> {{contributors[0].userName}}</span> /
+                <span  class="under" style="font-size: 28px;"> {{contributors[0].userName}}</span> /
                 <span class="under" style="font-size: 28px;"> {{projectData.projectName}} </span>
             </span>
         </div>

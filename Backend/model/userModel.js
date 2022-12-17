@@ -2,10 +2,18 @@ const mongoose = require('mongoose');
 
 const DB = "mongodb+srv://Abhijeet1710:Abhijeet1710@cluster0.thaufm4.mongodb.net/ContDB?retryWrites=true&w=majority";
 
-mongoose
-.connect('mongodb://localhost:27017/cont', {})
-.then(() => console.log("Connected to DB successfully"));
+// mongoose
+// .connect('mongodb://localhost:27017/cont', {})
+// .then(() => console.log("Connected to DB successfully"));
 
+mongoose
+    .connect(DB)
+    .then(() => {
+        console.log(`Connected to MongoDB Atlas`);
+    })
+    .catch((err) => {
+        console.log(`MongoDB Atlas Error ${err}`);
+    })
 
 
 const Msg = new mongoose.Schema({
