@@ -9,6 +9,7 @@ export class CreateNewService {
 
   constructor(private http : HttpClient) { }
 
+  // C
   addNewProject = (projectData) : Observable<any> => {
     return this.http.post('http://localhost:3000/project/addNewProject', projectData);
   }
