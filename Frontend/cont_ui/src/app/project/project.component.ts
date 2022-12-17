@@ -198,7 +198,7 @@ export class ProjectComponent implements OnInit {
     this.projectService.acceptRequest(this.projectData.projectId, user.userId).subscribe(
       (res) => {
         console.log(res);
-        // this.ngOnInit();
+        this.ngOnInit();
       },
       (err) => {
         console.log(err);

@@ -52,7 +52,7 @@
 
  .footer {
      display: flex;
-     padding: 38px;
+     padding: 38px 0px;
      width: 100%;
      margin: auto;
      flex-direction: column;
