@@ -7,14 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
+  url = "https://contbackend.onrender.com";
+
   constructor(private http : HttpClient) {   
   }
 
   loginUser(data: any) : Observable<any> {
-    return this.http.post('http://localhost:3000/user/login', data);
+    return this.http.post(`${this.url}/user/login`, data);
   }
 
   signUpUser(data: any) : Observable<any> {
-    return this.http.post('http://localhost:3000/user/register', data);
+    return this.http.post(`${this.url}/user/register`, data);
   }
 }

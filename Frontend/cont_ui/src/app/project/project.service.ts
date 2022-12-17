@@ -7,21 +7,23 @@ import { Observable } from 'rxjs';
 })
 export class ProjectService {
 
+  url = "https://contbackend.onrender.com";
+
   constructor(private httpClient : HttpClient) { }
 
   getProject(projectId) : Observable<any> {
-    return this.httpClient.get(`http://localhost:3000/project/${projectId}`);
+    return this.httpClient.get(`${this.url}/project/${projectId}`);
   }
 
   getUsersPresentInArray(userIds) : Observable<any> {
-    return this.httpClient.post(`http://localhost:3000/users/usersPresentInArray`, {userIds});
+    return this.httpClient.post(`${this.url}/users/usersPresentInArray`, {userIds});
   }
   
   sendRequest(projectId, userId) : Observable<any> {
-    return this.httpClient.post(`http://localhost:3000/project/addRequest`, {userId, projectId});
+    return this.httpClient.post(`${this.url}/project/addRequest`, {userId, projectId});
   }
 
   acceptRequest(projectId, userId) : Observable<any> {
-    return this.httpClient.post(`http://localhost:3000/project/acceptRequest`, {userId, projectId});
+    return this.httpClient.post(`${this.url}/project/acceptRequest`, {userId, projectId});
   }
 }

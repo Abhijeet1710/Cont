@@ -7,10 +7,12 @@ import {Observable} from "rxjs"
 })
 export class CreateNewService {
 
+  url = "https://contbackend.onrender.com";
+
   constructor(private http : HttpClient) { }
 
   // C
   addNewProject = (projectData) : Observable<any> => {
-    return this.http.post('http://localhost:3000/project/addNewProject', projectData);
+    return this.http.post(`${this.url}/project/addNewProject`, projectData);
   }
 }

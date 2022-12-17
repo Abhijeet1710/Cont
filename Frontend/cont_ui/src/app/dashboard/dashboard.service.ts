@@ -8,13 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class DashboardService {
 
+  url = "https://contbackend.onrender.com";
+
   constructor(private http : HttpClient) { }
 
   updateUserData = (userData) : Observable<any> => {
-    return this.http.post('http://localhost:3000/user/update', userData);
+    return this.http.post(`${this.url}/user/update`, userData);
   }
 
   getAllProjects = () : Observable<any> => {
-    return this.http.get('http://localhost:3000/projects');
+    return this.http.get(`${this.url}/projects`);
   }
 }
